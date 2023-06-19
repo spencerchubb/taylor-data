@@ -12,11 +12,10 @@ def scrape(url):
     text = '\n'.join([e.get_text(separator='\n') for e in elements])
 
     filename = url.replace('https://genius.com/', '') + '.txt'
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         f.write(text)
 
-urls = [
-]
+urls = []
 for url in urls:
     print('Scraping', url, '...')
     scrape(url)
